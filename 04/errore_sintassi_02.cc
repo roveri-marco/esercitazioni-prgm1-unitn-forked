@@ -5,7 +5,7 @@ int main()
 {
   int b = 0;
 
-  cout << b << endl;
+  cout << c << endl;
 
   return 0;
 }

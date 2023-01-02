@@ -22,12 +22,10 @@ int main(int argc, char* argv [])
   }
   
   char parola[256];
-  input >> parola;
-  while (!input.eof()) {
+  while (input >> parola) {
       if (email(parola)) {
         cout << "Indirizzo: " << parola << endl;
       }
-      input >> parola;
   };
 
   

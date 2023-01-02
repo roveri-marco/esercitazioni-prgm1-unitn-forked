@@ -50,7 +50,7 @@ bool palindroma(char * parola) {
     int carattereCoda;
     
     
-    while(pila_top(caratterePila) && coda_first(carattereCoda)) {
+    while(pila_top(caratterePila) && coda_first(carattereCoda) && ePalindroma) {
     
         if (caratterePila != carattereCoda) {
             ePalindroma = false;

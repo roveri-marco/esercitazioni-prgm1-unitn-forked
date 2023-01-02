@@ -23,6 +23,16 @@ int main (int argc, char * argv[]) {
 }
     
 
+int calcolaLunghezza(char parola[]) {
+    int lunghezza = 0;
+    char carattereCorrente = parola[lunghezza];
+    while (carattereCorrente != '\0') {
+        lunghezza++;
+        carattereCorrente = parola[lunghezza];
+    }
+    return lunghezza;
+}
+
 int leggiECalcolaMedia(char nome_file[]) {
 
     fstream input, output;
@@ -63,12 +73,47 @@ int leggiECalcolaMedia(char nome_file[]) {
 }
 
 
-int calcolaLunghezza(char parola[]) {
-    int lunghezza = 0;
-    char carattereCorrente = parola[lunghezza];
-    while (carattereCorrente != '\0') {
-        lunghezza++;
-        carattereCorrente = parola[lunghezza];
-    }
-    return lunghezza;
-}
+// Variante con l'uso di una pila
+// int leggiECalcolaMedia(char nome_file[]) {
+
+//     // TODO aprire stream di input e append, controllare apertura
+//     fstream read, app;
+//     read.open(nome_file, ios::in);
+//     app.open(nome_file, ios::app);
+
+//     if (read.fail() || app.fail()) {
+//         cout << "Errore in apertura file!" << endl;
+//         exit(2);
+//     }
+
+
+//     // TODO leggere da file e calcolare somma e numero stringhe
+//     pila_init();
+//     char buffer[11];
+//     int val;
+
+//     while(read >> buffer) {
+//         val = 0;
+//         while(buffer[val] != '\0') {
+//             val++;
+//         }
+//         pila_push(val);
+//     }
+
+//     // TODO calcolo media
+//     int count = 0;
+//     int media = 0;
+//     while(pila_top(val)) {
+//         media += val;
+//         count++;
+//         pila_pop();
+//     }
+//     media /= count;
+
+//     // TODO scrittura della media in rappresentazione unaria sul file
+//     for (int i = 0; i < media; i++) {
+//         app << '*';
+//     }
+
+//     return media;
+// }

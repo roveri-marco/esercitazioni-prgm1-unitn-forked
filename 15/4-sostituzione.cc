@@ -22,16 +22,13 @@ int main(int argc, char* argv[])
   }
 
   char carattere;
-  input.get(carattere);
-  while(!input.eof())
+  while(input.get(carattere))
   {
     if (carattere == lettera)
       cout << "?";
     else
       cout << carattere;
-    input.get(carattere);
   }
-  cout << endl;
 
   input.close();
 

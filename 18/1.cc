@@ -35,15 +35,13 @@ int main (int argc, char * argv[]) {
     
     
     int chiave = atoi(argv[3]) % 26;
-    input >> parola;
-    while (!input.eof()) {
+    while (input >> parola) {
         if (cifrare) {
             crypt(parola, chiave);
         } else {
             decrypt(parola, chiave);
         }
         output << parola << " ";
-        input >> parola;
     }
     cout << endl;
     

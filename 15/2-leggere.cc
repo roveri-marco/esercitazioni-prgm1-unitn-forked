@@ -19,11 +19,9 @@ int main(int argc, char* argv[])
   }
 
   char buffer[256];
-  input >> buffer;
-  while(!input.eof())
+  while(input >> buffer)
   {
     cout << buffer << " ";
-    input >> buffer;
   }
   cout << endl;
 

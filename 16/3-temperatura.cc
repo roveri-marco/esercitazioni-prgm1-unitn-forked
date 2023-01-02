@@ -47,17 +47,15 @@ int main(int argc, char * argv [])
   }
 
   char tmp[256];
-  input >> tmp;
-  while(!input.eof())
+  while(input >> tmp)
   {
     temperature[temp_contatore] = atof(tmp);
     temp_contatore++;
-    input >> tmp;
   }
 
   sort_array(temperature, DIM);
 
-  for(int i=0; i<10; i++)
+  for(int i=0; i<atoi(argv[3]); i++)
   {
     cout << i+1 << ": " << temperature[i] << endl;
   }

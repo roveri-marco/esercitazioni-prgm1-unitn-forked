@@ -25,13 +25,11 @@ int main(int argc, char* argv[])
     cout << "Il file dato in input " << argv[1] << " non esiste!" << endl;
   }
 
-  input.get(carattere);
-  while(!input.eof())
+  while(input.get(carattere))
   {
     int indice = ottieni_indice(carattere);
     if (indice != -1)
       alfabeto[indice] += 1;
-    input.get(carattere);
   }
 
   stampa_occorrenze(alfabeto, sizeof(alfabeto)/sizeof(alfabeto[0]));
