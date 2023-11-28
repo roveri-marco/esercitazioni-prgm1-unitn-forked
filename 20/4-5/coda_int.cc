@@ -1,5 +1,5 @@
 #include <iostream>
-#include "coda.h"
+#include "coda_int.h"
 
 using namespace std;
 

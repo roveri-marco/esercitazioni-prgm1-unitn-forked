@@ -1,12 +1,10 @@
 #include <iostream>
 #include <cstring>
-#include "coda.h"
+#include "coda_str.h"
 
 using namespace std;
 
-
 int main() {
-
     init();
 
     cout << "inserisci: " << endl;
@@ -19,11 +17,11 @@ int main() {
     char input[MAX_DIM];
 
     while (!esci) {
-        
         cin >> input;
 
         if (strcmp(input, "rimuovi") == 0) {
-            char * primo;
+            char *primo;
+
             if (first(primo)) {
                 dequeue();
                 cout << "abbiamo rimosso " << primo << endl;
@@ -41,8 +39,13 @@ int main() {
             esci = true;
         }
         else {
-            cout << "abbiamo inserito " << input << " nella coda" << endl;
-            enqueue(input);
+            if (isInQueue(input)) {
+                cout << "La persona " << input << " era gia' presente nella coda" << endl;
+            } else {
+                // Add the person to the queue
+                cout << "abbiamo inserito " << input << " nella coda" << endl;
+               enqueue(input);
+            }
         }
     }
 

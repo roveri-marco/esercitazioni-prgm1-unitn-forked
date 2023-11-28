@@ -4,17 +4,16 @@
 using namespace std;
 
 struct nodo {
-    int value;
-    nodo* next;
+    int   value;
+    nodo *next;
 };
-typedef nodo* lista;
+typedef nodo *lista;
 
 
-lista creaLista(char* inputFile);
+lista creaLista(char *inputFile);
 
 
-int main(int argc, char* argv[]) {
-
+int   main(int argc, char *argv[]) {
     int returnValue = 0;
 
     if (argc != 2) {
@@ -33,11 +32,10 @@ int main(int argc, char* argv[]) {
     return returnValue;
 }
 
-
-lista creaLista(char* inputFile) {
-
+lista creaLista(char *inputFile) {
     fstream input;
-    lista listaDiNumeri = NULL;
+    lista   listaDiNumeri = NULL;
+
     input.open(inputFile, ios::in);
 
     if (input.fail()) {
@@ -46,13 +44,13 @@ lista creaLista(char* inputFile) {
     else {
         int numero;
         input >> numero;
-        listaDiNumeri = new nodo{numero, NULL};
-        nodo* nodoCorrente = listaDiNumeri;
+        listaDiNumeri = new nodo{ numero, NULL };
+        nodo *nodoCorrente = listaDiNumeri;
 
-        while(input >> numero) {
-            nodo* nuovoNodo = new nodo{numero, NULL};
+        while (input >> numero) {
+            nodo *nuovoNodo = new nodo{ numero, NULL };
             nodoCorrente->next = nuovoNodo;
-            nodoCorrente = nuovoNodo;
+            nodoCorrente       = nuovoNodo;
         }
     }
 

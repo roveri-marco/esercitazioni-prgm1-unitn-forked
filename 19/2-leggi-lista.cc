@@ -13,7 +13,7 @@ typedef nodo* lista;
 lista creaLista(char* inputFile);
 void stampaLista(lista listaDiNumeri);
 void distruggiLista(lista listaDiNumeri);
-
+void distruggiListaRec(lista listaDiNumeri);
 
 int main(int argc, char* argv[]) {
 
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
             returnValue = 2;
         }
         stampaLista(listaDiNumeri);
-        distruggiLista(listaDiNumeri);
+        distruggiListaRec(listaDiNumeri);
     }
 
     return returnValue;
@@ -81,5 +81,12 @@ void distruggiLista(lista listaDiNumeri) {
         prossimoNodo = listaDiNumeri->next;
         delete listaDiNumeri;
         listaDiNumeri = prossimoNodo;
+    }
+}
+
+void distruggiListaRec(lista listaDiNumeri) {
+    if (listaDiNumeri != NULL) {
+        distruggiListaRec(listaDiNumeri->next);
+        delete listaDiNumeri;
     }
 }

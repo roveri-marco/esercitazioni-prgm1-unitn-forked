@@ -1,6 +1,6 @@
 #include <iostream>
-#include "pila.h"
-#include "coda.h"
+#include "pila_int.h"
+#include "coda_int.h"
 
 using namespace std;
 

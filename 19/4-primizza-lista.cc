@@ -5,19 +5,19 @@
 using namespace std;
 
 struct nodo {
-    int value;
-    nodo* next;
+    int   value;
+    nodo *next;
 };
-typedef nodo* lista;
+typedef nodo *lista;
 
 
-lista creaLista(char* inputFile);
-void stampaListaInvertita(lista listaDiNumeri);
-void distruggiLista(lista listaDiNumeri);
-lista primizzaLista(lista &lista);
+lista creaLista(char *inputFile);
+void  stampaListaInvertita(lista listaDiNumeri);
+void  distruggiLista(lista listaDiNumeri);
+lista primizzaLista(lista& lista);
 
 
-int main(int argc, char* argv[]) {
+int   main(int argc, char *argv[]) {
     int returnValue = 0;
 
     if (argc != 2) {
@@ -39,10 +39,10 @@ int main(int argc, char* argv[]) {
     return returnValue;
 }
 
-
-lista creaLista(char* inputFile) {
+lista creaLista(char *inputFile) {
     fstream input;
-    lista listaDiNumeri = NULL;
+    lista   listaDiNumeri = NULL;
+
     input.open(inputFile, ios::in);
 
     if (input.fail()) {
@@ -51,13 +51,13 @@ lista creaLista(char* inputFile) {
     else {
         int numero;
         input >> numero;
-        listaDiNumeri = new nodo{numero, NULL};
-        nodo* nodoCorrente = listaDiNumeri;
+        listaDiNumeri = new nodo{ numero, NULL };
+        nodo *nodoCorrente = listaDiNumeri;
 
-        while(input >> numero) {
-            nodo* nuovoNodo = new nodo{numero, NULL};
+        while (input >> numero) {
+            nodo *nuovoNodo = new nodo{ numero, NULL };
             nodoCorrente->next = nuovoNodo;
-            nodoCorrente = nuovoNodo;
+            nodoCorrente       = nuovoNodo;
         }
     }
 
@@ -66,7 +66,6 @@ lista creaLista(char* inputFile) {
     return listaDiNumeri;
 }
 
-
 void stampaListaInvertita(lista listaDiNumeri) {
     if (listaDiNumeri->next != NULL) {
         stampaListaInvertita(listaDiNumeri->next);
@@ -74,9 +73,9 @@ void stampaListaInvertita(lista listaDiNumeri) {
     cout << listaDiNumeri->value << endl;
 }
 
-
 void distruggiLista(lista listaDiNumeri) {
-    nodo* prossimoNodo;
+    nodo *prossimoNodo;
+
     while (prossimoNodo != NULL) {
         prossimoNodo = listaDiNumeri->next;
         delete listaDiNumeri;
@@ -84,11 +83,13 @@ void distruggiLista(lista listaDiNumeri) {
     }
 }
 
-lista primizzaLista(lista &lista) {
-    nodo* ret = lista;
-    nodo* prev = NULL;
-    for (nodo* nodoCorrente = lista; nodoCorrente != NULL;) {
+lista primizzaLista(lista& lista) {
+    nodo *ret  = lista;
+    nodo *prev = NULL;
+
+    for (nodo *nodoCorrente = lista; nodoCorrente != NULL;) {
         bool primo = numeroPrimo(nodoCorrente->value);
+
         if (!primo) {
             if (nodoCorrente == lista) {
                 ret = nodoCorrente->next;
@@ -100,7 +101,7 @@ lista primizzaLista(lista &lista) {
                 nodoCorrente = prev->next;
             }
         } else {
-            prev = nodoCorrente;
+            prev         = nodoCorrente;
             nodoCorrente = nodoCorrente->next;
         }
     }

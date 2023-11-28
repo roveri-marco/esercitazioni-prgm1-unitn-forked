@@ -1,12 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include "pila.h"
+#include "pila_int.h"
 
 using namespace std;
 
-int main(int argc, char* argv[]) {
-
- 
+int main(int argc, char *argv[]) {
     if (argc != 3) {
         cout << "Usage: ./a.out <input> <output>" << endl;
         exit(0);
@@ -20,16 +18,16 @@ int main(int argc, char* argv[]) {
         cout << "Errore file" << endl;
         exit(1);
     }
-    
+
 
     init();
     int numero;
 
-    while(input >> numero) {
+    while (input >> numero) {
         push(numero);
     }
 
-    while(top(numero)) {
+    while (top(numero)) {
         output << numero << endl;
         pop();
     }

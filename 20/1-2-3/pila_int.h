@@ -2,15 +2,15 @@
 #define PILA_H
 
 struct nodo {
-	int value;
-	nodo* next;
+    int   value;
+    nodo *next;
 };
-typedef nodo* lista;
+typedef nodo *lista;
 
 void init();
 bool push(int);
-bool top(int &);
+bool top(int&);
 bool pop();
 void deinit();
 
-#endif
+#endif // ifndef PILA_H

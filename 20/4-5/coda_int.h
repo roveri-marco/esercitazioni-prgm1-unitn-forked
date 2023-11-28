@@ -2,10 +2,10 @@
 #define CODA_H
 
 struct nodoCoda {
-	int value;
-	nodoCoda* next;
+    int       value;
+    nodoCoda *next;
 };
-typedef nodoCoda* listaCoda;
+typedef nodoCoda *listaCoda;
 
 struct coda {
     listaCoda tail;
@@ -14,12 +14,9 @@ struct coda {
 
 void coda_init();
 bool coda_enqueue(int);
-bool coda_first(int &);
+bool coda_first(int&);
 bool coda_dequeue();
 void coda_deinit();
 void coda_print();
 
-#endif
-
-
-
+#endif // ifndef CODA_H

@@ -1,10 +1,9 @@
 #include <iostream>
-#include "pila.h"
+#include "pila_int.h"
 
 using namespace std;
 
 int main() {
-
     init();
 
     char buffer[101];
@@ -13,19 +12,18 @@ int main() {
     cout << "inserisci l'espressione: " << endl;
     cin >> buffer;
 
-    int indice = 0;
+    int  indice            = 0;
     char carattereCorrente = buffer[indice];
 
     while (carattereCorrente != '\0') {
-
         carattereCorrente = buffer[indice];
 
         if (carattereCorrente == '(') {
             push(carattereCorrente);
         }
         else if (carattereCorrente == ')') {
-
             int tmp;
+
             if (top(tmp)) {
                 pop();
             }
