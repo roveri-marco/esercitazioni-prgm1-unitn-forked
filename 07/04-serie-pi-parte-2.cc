@@ -4,28 +4,29 @@ using namespace std;
 
 int main()
 {
-  double N;
-  cout << "Inserisci massima approsimazione: ";
-  cin >> N;
+    double N;
 
-  double risultato = 0.0;
-  double pi_greco = 0.0;
-  double pi_greco_p = 0.0;
+    cout << "Inserisci massima approsimazione: ";
+    cin >> N;
 
-  int i=0;
-  do {
-    risultato += pow(-1, i) * 1.0/(2*i + 1);
-    pi_greco_p = pi_greco;
-    pi_greco = risultato*4;
+    double risultato  = 0.0;
+    double pi_greco   = 0.0;
+    double pi_greco_p = 0.0;
 
-    cout << "Differenza: " << abs(pi_greco-pi_greco_p) << "\r";
+    int i = 0;
 
-    i++;
+    do {
+        risultato += pow(-1, i) * 1.0 / (2 * i + 1);
+        pi_greco_p = pi_greco;
+        pi_greco   = risultato * 4;
 
-  } while (abs(pi_greco-pi_greco_p) > N);
+        cout << "Differenza: " << abs(pi_greco - pi_greco_p) << "\r";
 
-  cout.precision(10);
-  cout << "Il risultato dell'approsimazione è: " << fixed << pi_greco << endl;
+        i++;
+    } while (abs(pi_greco - pi_greco_p) > N);
 
-  return 0;
+    cout.precision(10);
+    cout << "Il risultato dell'approsimazione è: " << fixed << pi_greco << endl;
+
+    return 0;
 }

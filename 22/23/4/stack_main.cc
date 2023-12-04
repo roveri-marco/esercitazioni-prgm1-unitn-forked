@@ -44,6 +44,7 @@ int main() {
               print(s);
               break;
           default:
+
               if (scelta != 'e') {
                   cout << "Operazione non valida: " << scelta << endl;
               }

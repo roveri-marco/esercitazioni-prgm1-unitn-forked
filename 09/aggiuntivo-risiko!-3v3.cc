@@ -3,16 +3,19 @@
 
 using namespace std;
 
-void sort(int & n1, int & n2, int & n3);
-void swap(int & n1, int & n2);
-int tiraDado();
-void confronta(int att, int dif);
+void sort(int& n1,
+          int& n2,
+          int& n3);
+void swap(int& n1,
+          int& n2);
+int  tiraDado();
+void confronta(int att,
+               int dif);
 
 
 int main() {
-
     srand(time(NULL));
-    
+
     int att1 = tiraDado();
     int att2 = tiraDado();
     int att3 = tiraDado();
@@ -29,17 +32,17 @@ int main() {
     confronta(att1, dif1);
 }
 
-void sort(int & n1, int & n2, int & n3) {
-    if (n1 > n2)
-        swap(n1, n2);
-    if (n1 > n3)
-        swap(n1, n3);
-    if (n2 > n3)
-        swap(n2, n3);
+void sort(int& n1, int& n2, int& n3) {
+    if (n1 > n2)swap(n1, n2);
+
+    if (n1 > n3)swap(n1, n3);
+
+    if (n2 > n3)swap(n2, n3);
 }
 
-void swap(int & n1, int & n2) {
+void swap(int& n1, int& n2) {
     int temp = n1;
+
     n1 = n2;
     n2 = temp;
 }
@@ -49,7 +52,6 @@ int tiraDado() {
 }
 
 void confronta(int att, int dif) {
-
     cout << "Dado attaccante: " << att << endl;
     cout << "Dado difensore: " << dif << endl;
 

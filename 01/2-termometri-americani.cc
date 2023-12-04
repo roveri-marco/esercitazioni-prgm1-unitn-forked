@@ -6,14 +6,14 @@
 using namespace std;
 
 int main() {
-  float celsius, farenheit;
+    float celsius, farenheit;
 
-  cout << "Dammi la temperatura in F: ";
-  cin >> farenheit;
+    cout << "Dammi la temperatura in F: ";
+    cin >> farenheit;
 
-  celsius = (farenheit - 32) / 1.8;
+    celsius = (farenheit - 32) / 1.8;
 
-  cout << "La temperatura in Celsius è: " << celsius << endl;
+    cout << "La temperatura in Celsius è: " << celsius << endl;
 
-  return 0;
+    return 0;
 }

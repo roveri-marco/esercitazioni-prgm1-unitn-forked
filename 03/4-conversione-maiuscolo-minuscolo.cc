@@ -3,14 +3,14 @@ using namespace std;
 
 int main()
 {
-  char minuscolo, maiuscolo;
+    char minuscolo, maiuscolo;
 
-  cout << "Inserisci una lettera in minuscolo: ";
-  cin >> minuscolo;
+    cout << "Inserisci una lettera in minuscolo: ";
+    cin >> minuscolo;
 
-  maiuscolo = (minuscolo - 'a')+'A';
+    maiuscolo = (minuscolo - 'a') + 'A';
 
-  cout << "La lettera convertita è: " << maiuscolo << endl;
+    cout << "La lettera convertita è: " << maiuscolo << endl;
 
-  return 0;
+    return 0;
 }

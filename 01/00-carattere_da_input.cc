@@ -9,9 +9,10 @@
 using namespace std;
 
 int main() {
-  char c;
-  cout << "Dammi un carattere: ";
-  cin >> c;
-  cout << "Hai scritto: " << c << endl;
-  return 0;
+    char c;
+
+    cout << "Dammi un carattere: ";
+    cin >> c;
+    cout << "Hai scritto: " << c << endl;
+    return 0;
 }

@@ -4,15 +4,14 @@
 
 using namespace std;
 
-bool palindroma(char * parola);
+bool palindroma(char *parola);
 
-int main () {
-
+int  main() {
     char parola[101];
-    
+
     cout << "Inserire la parola: ";
     cin >> parola;
-    
+
     if (palindroma(parola)) {
         cout << "La parola è palindroma" << endl;
     } else {
@@ -22,56 +21,42 @@ int main () {
     return 0;
 }
 
-
-bool palindroma(char * parola) {
-
+bool palindroma(char *parola) {
     pila_init();
     coda_init();
-    
+
     bool ePalindroma = true;
-    
-    
-    int indice = 0;
+
+
+    int  indice            = 0;
     char carattereCorrente = parola[indice];
-    
+
     while (carattereCorrente != '\0') {
-    
         carattereCorrente = parola[indice];
-        
+
         if (carattereCorrente != '\0') {
-           pila_push( (int) carattereCorrente );
-           coda_enqueue( (int) carattereCorrente );
+            pila_push((int)carattereCorrente);
+            coda_enqueue((int)carattereCorrente);
         }
         indice++;
     }
-    
-    
+
+
     int caratterePila;
     int carattereCoda;
-    
-    
-    while(pila_top(caratterePila) && coda_first(carattereCoda) && ePalindroma) {
-    
+
+
+    while (pila_top(caratterePila) && coda_first(carattereCoda) &&
+           ePalindroma) {
         if (caratterePila != carattereCoda) {
             ePalindroma = false;
         }
         pila_pop();
         coda_dequeue();
     }
-    
+
     pila_deinit();
     coda_deinit();
-    
+
     return ePalindroma;
 }
-
-
-
-
-
-
-
-
-
-
-

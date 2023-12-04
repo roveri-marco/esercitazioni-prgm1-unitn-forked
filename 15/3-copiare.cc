@@ -3,31 +3,32 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  if (argc < 3)
-  {
-    cout << "Usage: copiare <input_file> <output_file>" << endl;
-  }
+    if (argc < 3)
+    {
+        cout << "Usage: copiare <input_file> <output_file>" << endl;
+    }
 
-  fstream input, output;
-  input.open(argv[1], ios::in);
-  output.open(argv[2], ios::out);
+    fstream input, output;
+    input.open(argv[1], ios::in);
+    output.open(argv[2], ios::out);
 
-  if (input.fail())
-  {
-    cout << "Il file dato in input " << argv[1] << " non esiste!" << endl;
-  }
+    if (input.fail())
+    {
+        cout << "Il file dato in input " << argv[1] << " non esiste!" << endl;
+    }
 
-  char buffer[256];
-  while(input >> buffer)
-  {
-    output << buffer << " ";
-  }
-  output << endl;
+    char buffer[256];
 
-  output.close();
-  input.close();
+    while (input >> buffer)
+    {
+        output << buffer << " ";
+    }
+    output << endl;
 
-  return 0;
+    output.close();
+    input.close();
+
+    return 0;
 }

@@ -3,19 +3,17 @@ using namespace std;
 
 int main()
 {
+    int i = 0;
 
-
-  int i=0;
-
-  while(i < 100) {
-    if ( i%2 != 0 ) {
-      i++;
-      continue;
-    } else {
-      cout << i << endl;
+    while (i < 100) {
+        if (i % 2 != 0) {
+            i++;
+            continue;
+        } else {
+            cout << i << endl;
+        }
+        i++;
     }
-    i++;
-  }
 
-  return 0;
+    return 0;
 }

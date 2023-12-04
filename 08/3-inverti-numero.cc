@@ -5,8 +5,8 @@ using namespace std;
 int stampaInverso(int numero);
 
 int main() {
-
     int numero;
+
     cout << "Inserisci un numero intero: ";
     cin >> numero;
 
@@ -31,11 +31,11 @@ int stampaInverso(int numero) {
     // noi andremo, di fatto, ad invertire il numero.
 
     while (numero != 0) {
-      int cifra = numero % 10;
-      numero = numero / 10;
+        int cifra = numero % 10;
+        numero = numero / 10;
 
-      numeroInvertito *= 10;
-      numeroInvertito += cifra;
+        numeroInvertito *= 10;
+        numeroInvertito += cifra;
     }
     return numeroInvertito;
 }

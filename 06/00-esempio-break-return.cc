@@ -3,17 +3,15 @@ using namespace std;
 
 int main()
 {
+    for (int i = 1; i < 100; i++)
+    {
+        if (i % 2 != 0)break;
 
-  for (int i=1; i<100; i++)
-  {
-    if ( i%2 != 0 )
-      break;
-      //return 0;
-    cout << i << endl;
-  }
-  cout << 17 << endl;
-
+        // return 0;
+        cout << i << endl;
+    }
+    cout << 17 << endl;
 
 
-  return 0;
+    return 0;
 }

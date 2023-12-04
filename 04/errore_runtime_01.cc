@@ -4,8 +4,9 @@ using namespace std;
 // Divisione per 0
 int main()
 {
-  int a = 5;
-  cout << a/0 << endl;
+    int a = 5;
 
-  return 0;
+    cout << a / 0 << endl;
+
+    return 0;
 }

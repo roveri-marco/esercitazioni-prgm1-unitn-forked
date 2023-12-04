@@ -3,10 +3,9 @@
 
 using namespace std;
 
-void generare_lanci(int & totale);
+void generare_lanci(int& totale);
 
-int main() {
-
+int  main() {
     srand(time(NULL));
 
     int tentativo, numeroDi1 = 0;
@@ -25,17 +24,16 @@ int main() {
     return 0;
 }
 
-void generare_lanci(int & totale) {
+void generare_lanci(int& totale) {
+    // Resetto il valore totale
+    totale = 0;
 
-  // Resetto il valore totale
-  totale = 0;
+    for (int i = 0; i < 10; i++) {
+        int lancio = rand() % 6 + 1;
+        cout << lancio << endl;
 
-  for (int i = 0 ; i < 10 ; i++) {
-      int lancio = rand() % 6 + 1;
-      cout << lancio << endl;
-      if (lancio == 1) {
-          totale++;
-      }
-  }
-
+        if (lancio == 1) {
+            totale++;
+        }
+    }
 }

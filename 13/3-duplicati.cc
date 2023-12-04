@@ -2,13 +2,16 @@
 
 using namespace std;
 
-void inizializza(int array[], int dim);
-void stampa(const int array[], int dim);
-void bubblesort(int array[], int dim);
-void rimuoviDuplicati(int array[], int dim);
+void inizializza(int array[],
+                 int dim);
+void stampa(const int array[],
+            int       dim);
+void bubblesort(int array[],
+                int dim);
+void rimuoviDuplicati(int array[],
+                      int dim);
 
-int main() {
-
+int  main() {
     const int DIM = 10;
     int array[DIM];
 
@@ -24,37 +27,34 @@ int main() {
 }
 
 void inizializza(int array[], int dim) {
-
-    for (int i = 0 ; i < dim ; i++) {
+    for (int i = 0; i < dim; i++) {
         array[i] = rand() % 100;
     }
 }
 
 void stampa(const int array[], int dim) {
-    
-    for ( int i = 0 ; i < dim ; i++) {
+    for ( int i = 0; i < dim; i++) {
         cout << array[i] << " ";
     }
     cout << endl;
 }
 
 void bubblesort(int array[], int dim) {
-
-    for (int i = 0 ; i< dim ; i++) {
-        for (int j = 0; j < dim-1-i; j++) {
-            if (array[j] > array[j+1]) {
-                int temp = array[j+1];
-                array[j+1] = array[j];
-                array[j] = temp;
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim - 1 - i; j++) {
+            if (array[j] > array[j + 1]) {
+                int temp = array[j + 1];
+                array[j + 1] = array[j];
+                array[j]     = temp;
             }
         }
     }
 }
 
 void rimuoviDuplicati(int array[], int dim) {
-
     int numeroCorrente = array[0];
-    for (int i = 1 ; i < dim ; i++) {
+
+    for (int i = 1; i < dim; i++) {
         if (array[i] == numeroCorrente) {
             array[i] = -1;
         }

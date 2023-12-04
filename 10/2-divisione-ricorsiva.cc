@@ -2,11 +2,12 @@
 
 using namespace std;
 
-int divisione(int dividendo, int divisore);
+int divisione(int dividendo,
+              int divisore);
 
 int main() {
-
     int dividendo, divisore;
+
     cout << "Inserisci il dividendo: ";
     cin >> dividendo;
     cout << "Inserisci il divisore: ";
@@ -20,7 +21,6 @@ int main() {
 }
 
 int divisione(int dividendo, int divisore) {
-    
     int returnValue;
 
     if (dividendo < divisore) {
@@ -28,7 +28,7 @@ int divisione(int dividendo, int divisore) {
         returnValue = 0;
     }
     else {
-        dividendo -= divisore;
+        dividendo  -= divisore;
         returnValue = 1 + divisione(dividendo, divisore);
     }
 

@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main () {
-
+int main() {
     bool a, b;
 
     cout << "Inserisci il valore di 'a': ";
@@ -14,11 +13,12 @@ int main () {
     cout << "L'implicazione 'a -> b' ha valore " << (!a || b) << endl;
 
     // Soluzione con IF-ELSE
+
     /*if (a && !b) {
         cout << "L'implicazione 'a -> b' e' falsa" << endl;
-    } else {
+       } else {
         cout << "L'implicazione 'a -> b' e' vera" << endl;
-    }*/
+       }*/
 
     return 0;
 }

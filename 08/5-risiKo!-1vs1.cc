@@ -3,14 +3,14 @@
 
 using namespace std;
 
-void confronta(int dadoAttaccante, int dadoDifensore);
+void confronta(int dadoAttaccante,
+               int dadoDifensore);
 
-int main() {
-
+int  main() {
     srand(time(NULL));
 
     int dadoAttaccante = rand() % 6 + 1;
-    int dadoDifensore = rand() % 6 + 1;
+    int dadoDifensore  = rand() % 6 + 1;
 
     confronta(dadoAttaccante, dadoDifensore);
 
@@ -18,7 +18,6 @@ int main() {
 }
 
 void confronta(int dadoAttaccante, int dadoDifensore) {
-
     cout << "Dado attaccante: " << dadoAttaccante << endl;
     cout << "Dado difensore: " << dadoDifensore << endl;
 

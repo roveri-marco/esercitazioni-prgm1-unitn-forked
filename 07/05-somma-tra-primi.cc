@@ -3,48 +3,49 @@ using namespace std;
 
 int main()
 {
-  int N;
-  cout << "Inserire il numero che si vuole controllare" << endl;
-  cin >> N;
+    int N;
 
-  bool primo_addendo, secondo_addendo, somma;
+    cout << "Inserire il numero che si vuole controllare" << endl;
+    cin >> N;
 
-  int a,b;
+    bool primo_addendo, secondo_addendo, somma;
 
-  somma = false;
+    int a, b;
 
-  for (int i=2; i<N && !somma; i++)
-  {
-    primo_addendo = true;
-    secondo_addendo = true;
+    somma = false;
 
-    // Controllo se il primo addendo è un numero primo
-    a = i;
-    for (int divisore=2; divisore<i; divisore++)
+    for (int i = 2; i < N && !somma; i++)
     {
-      if (i%divisore == 0)
-        primo_addendo = false;
+        primo_addendo   = true;
+        secondo_addendo = true;
+
+        // Controllo se il primo addendo è un numero primo
+        a = i;
+
+        for (int divisore = 2; divisore < i; divisore++)
+        {
+            if (i % divisore == 0)primo_addendo = false;
+        }
+
+        // Controllo se il secondo addendo è un numero primo
+        b = N - i;
+
+        for (int divisore = 2; divisore < (N - i); divisore++)
+        {
+            if ((N - i) % divisore == 0)secondo_addendo = false;
+            b = (N - i);
+        }
+
+        // In caso siano entrambi numeri positivi, allora posso ritornare
+        if (primo_addendo && secondo_addendo)somma = true;
     }
 
-    // Controllo se il secondo addendo è un numero primo
-    b = N-i;
-    for (int divisore=2; divisore < (N-i); divisore++)
-    {
-      if ((N-i)%divisore == 0)
-        secondo_addendo = false;
-        b = (N-i);
-    }
+    if (somma)cout << "Il numero " << N <<
+            " può essere espresso come la somma dei seguenti" <<
+        " numeri primi " <<
+            a << " + " << b << endl;
+    else cout << "Il numero " << N <<
+            " non può essere espresso come somma di primi." << endl;
 
-    // In caso siano entrambi numeri positivi, allora posso ritornare
-    if (primo_addendo && secondo_addendo)
-      somma = true;
-
-  }
-
-  if (somma)
-    cout << "Il numero " << N << " può essere espresso come la somma dei seguenti" << " numeri primi " << a << " + " << b << endl;
-  else
-    cout << "Il numero " << N << " non può essere espresso come somma di primi." << endl;
-
-  return 0;
+    return 0;
 }

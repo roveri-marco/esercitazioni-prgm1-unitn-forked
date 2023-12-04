@@ -3,29 +3,30 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  if (argc < 2)
-  {
-    cout << "Usage: leggere <input_file>" << endl;
-  }
+    if (argc < 2)
+    {
+        cout << "Usage: leggere <input_file>" << endl;
+    }
 
-  fstream input;
-  input.open(argv[1], ios::in);
+    fstream input;
+    input.open(argv[1], ios::in);
 
-  if (input.fail())
-  {
-    cout << "Il file dato in input " << argv[1] << " non esiste!" << endl;
-  }
+    if (input.fail())
+    {
+        cout << "Il file dato in input " << argv[1] << " non esiste!" << endl;
+    }
 
-  char buffer[256];
-  while(input >> buffer)
-  {
-    cout << buffer << " ";
-  }
-  cout << endl;
+    char buffer[256];
 
-  input.close();
+    while (input >> buffer)
+    {
+        cout << buffer << " ";
+    }
+    cout << endl;
 
-  return 0;
+    input.close();
+
+    return 0;
 }

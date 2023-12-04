@@ -4,22 +4,24 @@
 using namespace std;
 
 struct nodo {
-    int value;
-    nodo* left;
-    nodo* right;
+    int   value;
+    nodo *left;
+    nodo *right;
 };
-typedef nodo* albero;
+typedef nodo *albero;
 
 
-albero creaAlberoDiRicercaBinaria(char* inputFile);
-void inserisciNodoInAlberoDiRicercaBinaria(albero radice, nodo* nuovoNodo);
-void stampaAlberoDiRicercaBinaria(albero radice);
-void stampaAlbero(albero radice, int spazio=0);
-void trovaPercorso(albero alberoBinario, int elementoDaCercare);
-void deallocaAlbero(albero alberoBinario);  
+albero creaAlberoDiRicercaBinaria(char *inputFile);
+void   inserisciNodoInAlberoDiRicercaBinaria(albero radice,
+                                             nodo  *nuovoNodo);
+void   stampaAlberoDiRicercaBinaria(albero radice);
+void   stampaAlbero(albero radice,
+                    int    spazio = 0);
+void   trovaPercorso(albero alberoBinario,
+                     int    elementoDaCercare);
+void   deallocaAlbero(albero alberoBinario);
 
-int main(int argc, char* argv[]) {
-
+int    main(int argc, char *argv[]) {
     if (argc != 2) {
         cout << "Usage: ./a.out <nome_file>" << endl;
         exit(1);
@@ -30,7 +32,6 @@ int main(int argc, char* argv[]) {
     if (radice == NULL) {
         exit(2);
     } else {
-
         stampaAlbero(radice);
 
         int elementoDaCercare;
@@ -38,29 +39,28 @@ int main(int argc, char* argv[]) {
         cin >> elementoDaCercare;
 
         trovaPercorso(radice, elementoDaCercare);
-        deallocaAlbero(radice); 
+        deallocaAlbero(radice);
     }
 
     return 0;
 }
 
-
-albero creaAlberoDiRicercaBinaria(char* inputFile) {
-
-    albero radice = NULL;
+albero creaAlberoDiRicercaBinaria(char *inputFile) {
+    albero  radice = NULL;
     fstream input;
 
     input.open(inputFile, ios::in);
+
     if (input.fail()) {
         cout << "Errore in lettura" << endl;
     }
     else {
         int numero;
         input >> numero;
-        radice = new nodo{numero, NULL, NULL};
+        radice = new nodo{ numero, NULL, NULL };
 
-        while(input >> numero) {
-            nodo* nuovoNodo = new nodo{numero, NULL, NULL};
+        while (input >> numero) {
+            nodo *nuovoNodo = new nodo{ numero, NULL, NULL };
             inserisciNodoInAlberoDiRicercaBinaria(radice, nuovoNodo);
         }
     }
@@ -70,7 +70,7 @@ albero creaAlberoDiRicercaBinaria(char* inputFile) {
     return radice;
 }
 
-void inserisciNodoInAlberoDiRicercaBinaria(albero radice, nodo* nuovoNodo) {
+void inserisciNodoInAlberoDiRicercaBinaria(albero radice, nodo *nuovoNodo) {
     if (nuovoNodo->value > radice->value) {
         if (radice->right == NULL) {
             radice->right = nuovoNodo;
@@ -97,19 +97,19 @@ void stampaAlberoDiRicercaBinaria(albero radice) {
     }
 }
 
-void stampaAlbero(albero radice, int spazio){
-   if (radice != NULL) {
-    spazio ++;
-    
-    stampaAlbero(radice->right, spazio);
- 
-    for (int i = 1; i < spazio; i++) {
-        cout<<"\t";
+void stampaAlbero(albero radice, int spazio) {
+    if (radice != NULL) {
+        spazio++;
+
+        stampaAlbero(radice->right, spazio);
+
+        for (int i = 1; i < spazio; i++) {
+            cout << "\t";
+        }
+        cout << radice->value << "\n";
+
+        stampaAlbero(radice->left, spazio);
     }
-    cout<<radice->value<<"\n";
-    
-    stampaAlbero(radice->left, spazio);
-   }
 }
 
 void trovaPercorso(albero radice, int elemento) {

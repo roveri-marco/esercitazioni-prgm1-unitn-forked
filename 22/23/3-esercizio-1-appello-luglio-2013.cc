@@ -3,10 +3,9 @@
 
 using namespace std;
 
-int calcolaLunghezza(char * stringa);
+int calcolaLunghezza(char *stringa);
 
-int main(int argc, char * argv[]) {
-
+int main(int argc, char *argv[]) {
     int returnValue = 0;
 
     if (argc != 3) {
@@ -14,7 +13,6 @@ int main(int argc, char * argv[]) {
         returnValue = 1;
     }
     else {
-
         fstream input;
         input.open(argv[2], ios::in);
 
@@ -23,17 +21,17 @@ int main(int argc, char * argv[]) {
             returnValue = 2;
         }
         else {
-            char * stringa = argv[1];
-            int lunghezzaStringa = calcolaLunghezza(stringa);
-            char parolaCorrente [31];
-            bool trovato = false;
+            char *stringa          = argv[1];
+            int   lunghezzaStringa = calcolaLunghezza(stringa);
+            char  parolaCorrente[31];
+            bool  trovato = false;
 
             while (input >> parolaCorrente && !trovato) {
-
-                int indiceDiPartenza = 0;
-                int indiceStringa = 0;
-                int indiceParolaCorrente = 0;
-                char carattereCorrente = parolaCorrente[indiceParolaCorrente];
+                int  indiceDiPartenza     = 0;
+                int  indiceStringa        = 0;
+                int  indiceParolaCorrente = 0;
+                char carattereCorrente    =
+                    parolaCorrente[indiceParolaCorrente];
 
                 while (carattereCorrente != '\0' && !trovato) {
                     carattereCorrente = parolaCorrente[indiceParolaCorrente];
@@ -67,9 +65,9 @@ int main(int argc, char * argv[]) {
     return returnValue;
 }
 
-
-int calcolaLunghezza(char * stringa) {
+int calcolaLunghezza(char *stringa) {
     int lunghezza = 0;
+
     while (stringa[lunghezza] != '\0') {
         lunghezza++;
     }

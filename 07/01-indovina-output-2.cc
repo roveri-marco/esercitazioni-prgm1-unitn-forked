@@ -3,15 +3,16 @@ using namespace std;
 
 int main()
 {
-  int i = 20;
-  int * ptr = &i;
-  (*ptr)++;
+    int  i   = 20;
+    int *ptr = &i;
 
-  int j = 15;
-  ptr = &j;
-  (*ptr)++;
+    (*ptr)++;
 
-  cout << i << endl;
+    int j = 15;
+    ptr = &j;
+    (*ptr)++;
 
-  return 0;
+    cout << i << endl;
+
+    return 0;
 }

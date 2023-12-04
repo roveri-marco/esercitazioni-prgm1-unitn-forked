@@ -4,9 +4,9 @@ using namespace std;
 
 void stampaBinario(int numero);
 
-int main() {
-
+int  main() {
     int numero;
+
     cout << "Inserisci un numero: ";
     cin >> numero;
 
@@ -15,7 +15,6 @@ int main() {
 }
 
 void stampaBinario(int numero) {
-
     if (numero != 0) {
         stampaBinario(numero / 2);
         cout << numero % 2;

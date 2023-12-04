@@ -2,11 +2,12 @@
 
 using namespace std;
 
-void swapHalf(short * n1, short * n2);
+void swapHalf(short *n1,
+              short *n2);
 
-int main() {
-
+int  main() {
     short n1, n2;
+
     n1 = 1855;
     n2 = 1048;
 
@@ -19,8 +20,7 @@ int main() {
     return 0;
 }
 
-void swapHalf(short * n1, short * n2) {
-
+void swapHalf(short *n1, short *n2) {
     // n1 = 0000011100111111
     //      ^        ^
     //      |        |
@@ -34,10 +34,11 @@ void swapHalf(short * n1, short * n2) {
     // sovrascrivere metà dello short originario con la metà dell'altro short.
     // Vedere schema superiore:
 
-    char * pn1 = (char *) n1;
-    char * pn2 = (char *) n2;
+    char *pn1 = (char *)n1;
+    char *pn2 = (char *)n2;
 
-    char tempSecondHalfN1 = *(pn1+1*sizeof(char));
-    *(pn1+1) = *(pn2+1);
-    *(pn2+1) = tempSecondHalfN1;
+    char tempSecondHalfN1 = *(pn1 + 1 * sizeof(char));
+
+    *(pn1 + 1) = *(pn2 + 1);
+    *(pn2 + 1) = tempSecondHalfN1;
 }

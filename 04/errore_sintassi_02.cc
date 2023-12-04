@@ -3,9 +3,9 @@ using namespace std;
 
 int main()
 {
-  int b = 0;
+    int b = 0;
 
-  cout << c << endl;
+    cout << c << endl;
 
-  return 0;
+    return 0;
 }

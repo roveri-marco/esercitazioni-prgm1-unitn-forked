@@ -40,11 +40,12 @@ int main() {
         }
         else {
             if (isInQueue(input)) {
-                cout << "La persona " << input << " era gia' presente nella coda" << endl;
+                cout << "La persona " << input <<
+                " era gia' presente nella coda" << endl;
             } else {
                 // Add the person to the queue
                 cout << "abbiamo inserito " << input << " nella coda" << endl;
-               enqueue(input);
+                enqueue(input);
             }
         }
     }

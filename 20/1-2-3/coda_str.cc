@@ -12,6 +12,7 @@ static bool vuota() {
 
 bool isInQueue(char *inserendo) {
     bool res = false;
+
     for (nodo *nodoCorrente = Q.head; nodoCorrente != NULL;
          nodoCorrente = nodoCorrente->next) {
         if (strcmp(nodoCorrente->nome, inserendo) == 0) {
