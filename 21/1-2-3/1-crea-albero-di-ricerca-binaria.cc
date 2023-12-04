@@ -13,7 +13,7 @@ typedef nodo* albero;
 
 albero creaAlberoDiRicercaBinaria(char* inputFile);
 void inserisciNodoInAlberoDiRicercaBinaria(albero radice, nodo* nuovoNodo);
-void stampaAlbero(albero radice, int spazio=0);
+void stampaAlbero(albero radice, int spazio=2);
  
 
 int main(int argc, char* argv[]) {

@@ -3,15 +3,13 @@
 
 using namespace std;
 
-int main(int argc, char * argv[]) {
-
+int main(int argc, char *argv[]) {
     fstream input, output;
 
     if (argc != 3) {
         cout << "Usage: ./a.out <inputFile> <outputFile>" << endl;
     }
     else {
-
         char carattereCorrente;
         bool rendiMaiuscola = true;
 
@@ -25,19 +23,18 @@ int main(int argc, char * argv[]) {
             input >> noskipws;
 
             while (input >> carattereCorrente) {
-                if (carattereCorrente >= 'A' && carattereCorrente <= 'Z') {
+                if ((carattereCorrente >= 'A') && (carattereCorrente <= 'Z')) {
                     rendiMaiuscola = false;
                 }
-                else if (rendiMaiuscola && 
-                    carattereCorrente >= 'a' && 
-                    carattereCorrente <= 'z') {
-                    
+                else if (rendiMaiuscola &&
+                         (carattereCorrente >= 'a') &&
+                         (carattereCorrente <= 'z')) {
                     carattereCorrente += ('A' - 'a');
-                    rendiMaiuscola = false;
+                    rendiMaiuscola     = false;
                 }
-                else if (carattereCorrente == '.' || 
-                         carattereCorrente == '!' || 
-                         carattereCorrente == '?') {
+                else if ((carattereCorrente == '.') ||
+                         (carattereCorrente == '!') ||
+                         (carattereCorrente == '?')) {
                     rendiMaiuscola = true;
                 }
 
