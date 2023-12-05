@@ -8,9 +8,6 @@ void ruotaArrayInefficiente(char v[],
                             int  dim,
                             int  rotazione);
 void ruotaArrayEfficiente(char v[],
-                          int  dim,
-                          int  rotazione);
-void ruotaArrayEfficienteSemplice(char v[],
                                   int  dim,
                                   int  rotazione);
 
@@ -28,7 +25,6 @@ int main() {
     stampaArray(v, dim);
     ruotaArrayInefficiente(v, dim, j);
 
-    // ruotaArrayEfficienteConArray(v, dim, j);
     // ruotaArrayEfficiente(v, dim, j);
     stampaArray(v, dim);
 
@@ -43,26 +39,6 @@ void stampaArray(char v[], int dim) {
 }
 
 void ruotaArrayEfficiente(char v[], int dim, int rotazione) {
-    int rotazioniEffettuate = 0;
-
-    for (int k = 0; k < rotazione && rotazioniEffettuate < dim; k++) {
-        int temp                    = v[k];
-        int indicePostoVuoto        = k;
-        int indiceElementoDaMuovere = rotazione + k;
-
-        for (int i = 0; i < dim - 1 && indiceElementoDaMuovere != k; i++) {
-            v[indicePostoVuoto] = v[indiceElementoDaMuovere];
-            rotazioniEffettuate++;
-            indicePostoVuoto        = indiceElementoDaMuovere;
-            indiceElementoDaMuovere = (indiceElementoDaMuovere + rotazione) %
-                                      dim;
-        }
-        v[indicePostoVuoto] = temp;
-        rotazioniEffettuate++;
-    }
-}
-
-void ruotaArrayEfficienteConArray(char v[], int dim, int rotazione) {
     int *temp = new int[rotazione];
 
     for (int i = 0; i < rotazione; i++) {
