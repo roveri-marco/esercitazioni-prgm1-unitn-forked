@@ -34,5 +34,5 @@ int calcola_it(int x, int y) {
         x = x - y;
         ++result;
     }
-    return x;
+    return result;
 }

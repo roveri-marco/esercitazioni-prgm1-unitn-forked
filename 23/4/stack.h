@@ -2,7 +2,7 @@
 #define STACK_H
 
 struct node {
-    double val;
+    long val;
     node *next;
 };
 typedef node *stack;
@@ -12,9 +12,9 @@ void   init(stack& s);
 void   deinit(stack& s);
 retval shrink(stack& s);
 void   add(stack& s,
-           double val);
+           long val);
 retval first(const stack& s,
-             double     & result);
+             long     & result);
 void   print(const stack& s);
 retval empty(const stack& s);
 

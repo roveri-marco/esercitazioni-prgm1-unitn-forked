@@ -3,9 +3,9 @@
 using namespace std;
 
 int main() {
-    char   scelta;
-    stack  s;
-    double val;
+    char  scelta;
+    stack s;
+    long  val;
 
     init(s);
 
@@ -31,13 +31,18 @@ int main() {
               if (!shrink(s)) {
                   cout << "Stack vuoto! \n";
               }
-              else cout << "Shrink ok! \n"; break;
+              else {
+                  cout << "Shrink ok! \n";
+              }
+              break;
           case 't':
 
               if (!first(s, val)) {
                   cout << "Stack vuoto! \n";
               }
-              else cout << "First: " << val << endl;
+              else {
+                  cout << "First: " << val << endl;
+              }
               break;
           case 'p':
               cout << "Contenuto dello stack: " << endl;

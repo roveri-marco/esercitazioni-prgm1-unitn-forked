@@ -21,7 +21,7 @@ retval empty(const stack& s) {
     return s == NULL ? TRUE : FALSE;
 }
 
-void add(stack& s, double val) {
+void add(stack& s, long val) {
     node *n = new node;
 
     n->val  = val;
@@ -39,7 +39,7 @@ retval shrink(stack& s) {
     return TRUE;
 }
 
-retval first(const stack& s, double& result) {
+retval first(const stack& s, long& result) {
     if (empty(s))return FALSE;
     result = s->val;
     return TRUE;

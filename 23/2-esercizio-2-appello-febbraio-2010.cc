@@ -34,13 +34,13 @@ int calcola_it(int x, int y) {
         x = x - y;
         ++result;
     }
-    return x;
+    return result;
 }
 
 int calcola_ric(int x, int y) {
     if (x < y) {
-        return x;
+        return 0;
     } else {
-        return calcola_ric(x - y, y);
+        return 1 + calcola_ric(x - y, y);
     }
 }
